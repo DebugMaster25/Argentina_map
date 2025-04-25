@@ -8,20 +8,21 @@
       body {
         background-color: #87b7f544;
         font-family: sans-serif;
+        display: flex;
+        justify-content: center;
         position: relative;
         width: 100vw;
       }
 
-      .Argentina {
+      .Argentina {         
         max-width: 1500px;
         position: absolute;
-        left: 0%;
       }
 
       .Falkland {
-        max-width: 180px;
         position: absolute;
-        overflow: visible;
+        overflow: visible;        
+        max-width: 150px;
       }
 
       .Antarctica {
@@ -63,52 +64,10 @@
         pointer-events: none;
       }
 
-      /* @media (min-width: 1650px) and (max-width: 1700px) {
-        .Falkland {
-          max-width: 160px!important;
-          transform: translate(100px, 1400px)!important;
-        }
-      }
-
-      @media (min-width: 1500px) and (max-width: 1650px) {
-        .Falkland {
-          max-width: 140px!important;
-          transform: translate(95px, 1320px)!important;
-        }
-      }
-
-      @media (min-width: 1430px) and (max-width: 1500px) {
-        .Falkland {
-          max-width: 120px!important;
-          transform: translate(87px, 1160px)!important;
-        }
-      }
-
-      @media (min-width: 1380px) and (max-width: 1430px) {
-        .Falkland {
-          max-width: 120px!important;
-          transform: translate(72px, 1120px)!important;
-        }
-      }
-
-      @media (min-width: 1300px) and (max-width: 1380px) {
-        .Falkland {
-          max-width: 120px!important;
-          transform: translate(72px, 1080px)!important;
-        }
-      }
-
-      @media (min-width: 900px) and (max-width: 1300px) {
-        .Falkland {
-          max-width: 95px!important;
-          transform: translate(55px, 730px)!important;
-        }
-      } */
-
-
     </style>
   </head>
   <body>
+    <!-- Argentina -->
     <svg
       class="Argentina"
       viewBox="0 0 800 1000"
@@ -678,27 +637,21 @@
     </svg>
 
     <script>
-      // Function to dynamically position the Falkland component
       function positionFalkland() {
         const argentina = document.querySelector('.Argentina');
         const falkland = document.querySelector('.Falkland');
   
-        // Get the dimensions and position of the Argentina component
         const argentinaRect = argentina.getBoundingClientRect();
-  
-        // Calculate the new position for Falkland
+        const bodyWidth = document.body.clientWidth;
+        const leftPosition = bodyWidth / 2 - argentinaRect.width * 0.5;
         const falklandTop = argentinaRect.height * 0.805;
-        const falklandLeft = argentinaRect.left + argentinaRect.width * 0.51; 
-  
-        // Apply the calculated position to Falkland
+        const falklandLeft = leftPosition + argentinaRect.width * 0.51;         
+
+        argentina.style.left = `${leftPosition}px`;
         falkland.style.top = `${falklandTop}px`;
         falkland.style.left = `${falklandLeft}px`;
-      }
-  
-      // Call the function on page load
-      window.addEventListener('load', positionFalkland);
-  
-      // Recalculate position on window resize
+      }      
+      window.addEventListener('load', positionFalkland);  
       window.addEventListener('resize', positionFalkland);
     </script>
   </body>
