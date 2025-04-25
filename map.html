@@ -8,34 +8,33 @@
         background-color: #87b7f544;
         font-family: sans-serif;
         display: flex;
+        position: relative;
         justify-content: center;
         padding: 140px;
-        position: relative;
+        width: 100vw;
+        height: 100%;
       }
 
       .Argentina {
-        width: 100%;
-        position: absolute;
         max-width: 1500px;
-        height: auto;
+        /* position: absolute;
+        left: 20%; */
       }
 
       .Falkland {
-        width: 100%;
-        max-width: 200px;
-        height: auto;
+        max-width: 180px;
         position: absolute;
         overflow: visible;
-        transform: translate(120px, 1500px);
+        top: 76%;
+        left: 51%;
       }
 
       .Antarctica {
-        width: 100%;
         max-width: 300px;
-        height: auto;
-        position: absolute;
+        position: fixed;
         overflow: visible;
-        transform: translate(800px, 1500px);
+        bottom: 0;
+        right: 0;
         border: solid 2px #a4ad7cad;
       }
 
@@ -68,6 +67,50 @@
         fill: #4e4e4e;
         pointer-events: none;
       }
+
+      /* @media (min-width: 1650px) and (max-width: 1700px) {
+        .Falkland {
+          max-width: 160px!important;
+          transform: translate(100px, 1400px)!important;
+        }
+      }
+
+      @media (min-width: 1500px) and (max-width: 1650px) {
+        .Falkland {
+          max-width: 140px!important;
+          transform: translate(95px, 1320px)!important;
+        }
+      }
+
+      @media (min-width: 1430px) and (max-width: 1500px) {
+        .Falkland {
+          max-width: 120px!important;
+          transform: translate(87px, 1160px)!important;
+        }
+      }
+
+      @media (min-width: 1380px) and (max-width: 1430px) {
+        .Falkland {
+          max-width: 120px!important;
+          transform: translate(72px, 1120px)!important;
+        }
+      }
+
+      @media (min-width: 1300px) and (max-width: 1380px) {
+        .Falkland {
+          max-width: 120px!important;
+          transform: translate(72px, 1080px)!important;
+        }
+      }
+
+      @media (min-width: 900px) and (max-width: 1300px) {
+        .Falkland {
+          max-width: 95px!important;
+          transform: translate(55px, 730px)!important;
+        }
+      } */
+
+
     </style>
   </head>
   <body>
